@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "watch": "concurrently \"theme watch\" \"parcel watch scripts/scripts.js -d assets -o scripts.js --no-hmr\" \"parcel watch styles/styles.scss -d assets -o styles.css --no-hmr\"",
-    "build": "concurrently \"parcel build scripts/scripts.js -d assets -o scripts.js\" \"parcel build styles/styles.scss -d assets -o styles.css\" && theme deploy"
+    "deploy": "concurrently \"parcel build scripts/scripts.js -d assets -o scripts.js\" \"parcel build styles/styles.scss -d assets -o styles.css\" && theme deploy"
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",

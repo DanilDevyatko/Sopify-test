@@ -31,8 +31,9 @@
   {%- endif -%}
 
   {% include 'social-meta-tags' %}
-  {% include 'style-tags', layout: 'theme' %}
   {% include 'css-variables' %}
+
+  {{ 'styles.css' | asset_url | stylesheet_tag }}
 
   <script>
     document.documentElement.className = document.documentElement.className.replace('no-js', '');
@@ -46,8 +47,6 @@
       moneyFormat: {{ shop.money_format | json }}
     };
   </script>
-
-  {% include 'script-tags', layout: 'theme' %}
 
   {{ content_for_header }}
 </head>
@@ -64,5 +63,7 @@
 
   {% section 'footer' %}
 
+  {{ 'scripts.js' | asset_url | script_tag }}
+  
 </body>
 </html>

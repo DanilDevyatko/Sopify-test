@@ -17,10 +17,9 @@
 
   <meta name="description" content="{{ 'gift_cards.issued.subtext' | t }}">
 
-  {% include 'style-tags', layout: 'gift_card' %}
   {% include 'css-variables' %}
 
-  {% include 'script-tags', layout: 'gift_card' %}
+  {{ 'styles.css' | asset_url | stylesheet_tag }}
 
   {{ content_for_header }}
 </head>
@@ -29,5 +28,8 @@
   <main role="main" id="MainContent">
     {{ content_for_layout }}
   </main>
+
+  {{ 'scripts.js' | asset_url | script_tag }}
+
 </body>
 </html>
