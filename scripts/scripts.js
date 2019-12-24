@@ -5,3 +5,5 @@ import cssVars from "css-vars-ponyfill";
 cssVars({
   rootElement: document // default
 });
+
+import "./templates/product";

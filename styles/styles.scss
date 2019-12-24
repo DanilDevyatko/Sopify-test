@@ -1,4 +1,9 @@
 @import "./static/normalize.scss";
-
 @import "./static/slick.scss";
 @import "./static/slick-theme.scss";
+
+@import "./variables.scss";
+
+@import "./core/index.scss";
+@import "./components/index.scss";
+@import "./sections/index.scss";

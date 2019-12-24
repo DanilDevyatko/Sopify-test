@@ -1,7 +1,8 @@
 .featured-collection {
   display: flex;
   flex-wrap: wrap;
-  max-width: $grid-max-width;
+  max-width: var(--collection-list-max-width);
+  // or scss variable from /styles/variables.scss
 }
 
 .featured-collection-item {
