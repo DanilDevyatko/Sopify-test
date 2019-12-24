@@ -1,0 +1,32 @@
+{
+  "name": "ds-shopify-boilerplate",
+  "version": "1.0.0",
+  "description": "Git boilerplate respository for the Shopify Themes.",
+  "main": "",
+  "repository": "git@bitbucket.org:vadymdigitalsuits/ds-shopify-boilerplate.git",
+  "author": "Vadym Lavorchuk <lavorchuk.vadim@digitalsuits.co>",
+  "license": "MIT",
+  "scripts": {
+    "watch": "concurrently \"theme watch\" \"parcel watch scripts/scripts.js -d assets -o scripts.js --no-hmr\" \"parcel watch styles/styles.scss -d assets -o styles.css --no-hmr\"",
+    "build": "concurrently \"parcel build scripts/scripts.js -d assets -o scripts.js\" \"parcel build styles/styles.scss -d assets -o styles.css\" && theme deploy"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "autoprefixer": "^9.7.1",
+    "babel-preset-env": "^1.7.0",
+    "concurrently": "^5.0.0",
+    "node-sass": "^4.13.0",
+    "parcel-bundler": "^1.12.4",
+    "postcss-modules": "^1.4.1",
+    "prettier": "^1.19.1",
+    "stylelint": "^11.1.1",
+    "stylelint-prettier": "^1.1.1",
+    "babel-polyfill": "^6.26.0",
+    "css-vars-ponyfill": "^2.1.2",
+    "normalize": "^0.3.1",
+    "normalize.css": "^8.0.1",
+    "jquery": "^3.4.1",
+    "slick-carousel": "^1.8.1"
+  }
+}
