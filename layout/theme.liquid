@@ -33,20 +33,7 @@
   {% include 'social-meta-tags' %}
   {% include 'css-variables' %}
 
-  {{ 'styles.css' | asset_url | stylesheet_tag }}
-
-  <script>
-    document.documentElement.className = document.documentElement.className.replace('no-js', '');
-
-    window.theme = {
-      strings: {
-        addToCart: {{ 'products.product.add_to_cart' | t | json }},
-        soldOut: {{ 'products.product.sold_out' | t | json }},
-        unavailable: {{ 'products.product.unavailable' | t | json }}
-      },
-      moneyFormat: {{ shop.money_format | json }}
-    };
-  </script>
+  <link rel="stylesheet" href="{{ 'styles.css' | asset_url }}" async>
 
   {{ content_for_header }}
 </head>
@@ -63,7 +50,21 @@
 
   {% section 'footer' %}
 
-  {{ 'scripts.js' | asset_url | script_tag }}
+  <script>
+    document.documentElement.className = document.documentElement.className.replace('no-js', '');
+
+    window.theme = {
+      strings: {
+        addToCart: {{ 'products.product.add_to_cart' | t | json }},
+        soldOut: {{ 'products.product.sold_out' | t | json }},
+        unavailable: {{ 'products.product.unavailable' | t | json }}
+      },
+      moneyFormat: {{ shop.money_format | json }}
+    };
+  </script>
+
+  <script src="{{ 'scripts.js' | asset_url }}" async></script>
   
+  {% render 'css-fonts' %}
 </body>
 </html>

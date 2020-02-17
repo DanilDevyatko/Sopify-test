@@ -7,9 +7,13 @@
   "author": "Vadym Lavorchuk <lavorchuk.vadim@digitalsuits.co>",
   "license": "MIT",
   "scripts": {
-    "watch": "concurrently \"theme watch\" \"parcel watch scripts/scripts.js -d assets -o scripts.js --no-hmr\" \"parcel watch styles/styles.scss -d assets -o styles.css --no-hmr\"",
-    "deploy": "concurrently \"parcel build scripts/scripts.js -d assets -o scripts.js\" \"parcel build styles/styles.scss -d assets -o styles.css\" && theme deploy"
+    "watch": "concurrently \"theme watch -v --no-update-notifier\" \"parcel watch scripts/scripts.js -d assets -o scripts.js --no-hmr --public-url ./assets\" \"parcel watch styles/styles.scss -d assets -o styles.css --no-hmr --no-source-maps\"",
+    "deploy": "concurrently \"parcel build scripts/scripts.js -d assets -o scripts.js --no-source-maps --no-cache\" \"parcel build styles/styles.scss -d assets -o styles.css --no-source-maps\" && theme deploy",
+    "deploy-staging": "concurrently \"parcel build scripts/scripts.js -d assets -o scripts.js --no-source-maps --no-cache\" \"parcel build styles/styles.scss -d assets -o styles.css --no-source-maps\" && theme deploy -e test"
   },
+  "browserslist": [
+    "defaults"
+  ],
   "devDependencies": {
     "@babel/core": "^7.7.2",
     "@babel/preset-env": "^7.7.1",
@@ -31,10 +35,14 @@
   },
   "dependencies": {
     "@shopify/theme-a11y": "^3.0.3",
+    "@shopify/theme-addresses": "^3.0.3",
     "@shopify/theme-currency": "^3.0.3",
     "@shopify/theme-product": "^3.0.3",
     "@shopify/theme-product-form": "^3.0.3",
     "@shopify/theme-sections": "^3.0.3",
-    "qrcode": "^1.4.4"
+    "cssnano": "^4.1.10",
+    "lozad": "^1.14.0",
+    "qrcode": "^1.4.4",
+    "slim-select": "^1.25.0"
   }
 }

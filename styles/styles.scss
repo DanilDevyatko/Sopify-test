@@ -1,9 +1,13 @@
 @import "./static/normalize.scss";
 @import "./static/slick.scss";
 @import "./static/slick-theme.scss";
-
+@import "../node_modules/slim-select/src/slim-select/slimselect.scss";
 @import "./variables.scss";
 
 @import "./core/index.scss";
+@import "./templates/index.scss";
 @import "./components/index.scss";
 @import "./sections/index.scss";
+@import "./snippets/index.scss";
+
+@import "./IE11.scss";

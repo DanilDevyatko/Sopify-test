@@ -1,25 +1,64 @@
 <style>
-  {{ settings.font_heading | font_face }}
-  {{ settings.font_body | font_face }}
-
-  {%- assign font_body_bold = settings.font_body | font_modify: 'weight', 'bolder' -%}
-  {%- assign font_body_bold_italic = font_body_bold | font_modify: 'style', 'italic' -%}
-
-  {{ font_body_bold | font_face }}
-  {{ font_body_bold_italic | font_face }}
-
   :root {
-    --color-accent: {{ settings.color_accent }};
-    --color-body-text: {{ settings.color_body_text }};
-    --color-main-background: {{ settings.color_main_bg }};
-    --color-border: {{ settings.color_body_text | color_lighten: 50 }};
+    /* used in default theme */
+    --container-max-width: 1440px;
 
-    --font-heading: {{ settings.font_heading.family }}, {{ settings.font_heading.fallback_families }};
-    --font-body: {{ settings.font_body.family }}, {{ settings.font_body.fallback_families }};
-    --font-body-weight: {{ settings.font_body.weight }};
-    --font-body-style: {{ settings.font_body.style }};
-    --font-body-bold-weight: {{ font_body_bold.weight | default: 'bold' }};
-    
-    --collection-list-max-width: 1700px;
+    --color-purple-100: #B9BBEC;
+    --color-blue-100: #B4D3FD;
+    --color-blue-40: #E1EDFE;
+    --color-red-active: #E85E55;
+    --color-red-100: #FB675D;
+    --color-red-40: #FDC2BE;
+    --color-red-20: #FEE1DF;
+    --color-green-100: #98E2C6;
+    --color-green-40: #D6F3E8;
+    --color-black-100: #010101;
+    --color-black-50: #808080;
+    --color-black-20: #CCCCCC;
+    --color-black-10: #E6E6E6;
+    --color-grey-100: #F3F4F6;
+    --color-bg: #FAFAFA;
+    --color-white: #FFFFFF;
+    --color-burger-grey: #C4C4C4;
+    --color-search-result: #737373;
+    --color-border: #E1E1E1;
+
+    --font-family: "Sailec", Helvetica, sans-serif;
+
+    --font-size-body: calc(0.97vw); /* 14px on 1440px */ 
+    --font-size-paragraph-small: 1rem; /* 14px */
+    --font-size-paragraph-large: 1.4285rem; /* 20px */
+
+    --font-size-heading-5: 1rem; /* 14px */
+    --font-size-heading-4: 2rem; /* 28px */
+    --font-size-heading-3: 2.2857rem; /* 32px */
+    --font-size-heading-2: 3.4285rem; /* 48px */
+    --font-size-heading-1: 4.2857rem; /* 60px */
+
+    --transition-duration: 0.3s;
+    --transition-property: all;
+    --transition-timing-function: ease;
+    --transition-default: var(--transition-property) var(--transition-duration) var(--transition-timing-function);
+
+    --border-width: 2px;
+    --border-style: solid;
+    --border-default: var(--border-width) var(--border-style) var(--color-black-20);
+  }
+
+  @media all and (max-width: 768px) {
+    :root {
+      --font-size-body: 14px; /* as in design */
+      --font-size-heading-5: 1rem; /* 14px */
+      --font-size-heading-4: 1.7142rem; /* 24px */
+      --font-size-heading-3: 2rem; /* 28px */
+      --font-size-heading-2: 2.8571rem; /* 40px */
+      --font-size-heading-1: 3.4285rem; /* 48px */
+    }
+  }
+
+  @media all and (min-width: 1440px) {
+    :root {
+      --font-size-body: 14px; /* compluted with the proportion 14px - 1440 18.6(6)px - 1920px */
+    }
   }
 </style>

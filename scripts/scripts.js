@@ -1,9 +1,3 @@
-import "babel-polyfill";
-import cssVars from "css-vars-ponyfill";
-
-// Document
-cssVars({
-  rootElement: document // default
-});
-
-import "./templates/product";
+import "./polyfills";
+import "./ui/index";
+import "./sections/index";
