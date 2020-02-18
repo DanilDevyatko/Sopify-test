@@ -2,10 +2,19 @@
 
 Идея взята из [Shopify](https://github.com/Shopify) / **[slate](https://github.com/Shopify/slate)**. И реализована как простая и модифицированая альтернатива.
 
+---
+
 ## Short documentation
 
 Для корректной работы нужны [nodejs](https://nodejs.org/en/), [npm](https://www.npmjs.com/) и [Shopify Theme Kit](https://shopify.github.io/themekit/).
 В основным сборщиком является [Parcel](https://parceljs.org/).
+
+### Code style
+
+Давайте следовать код стайлу позаимствованого у [airbnb](https://github.com/airbnb):
+
+- [styles](https://github.com/airbnb/css)
+- [javascript](https://github.com/airbnb/javascript)
 
 ---
 
