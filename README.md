@@ -42,6 +42,8 @@
 
 ## Shopify git flow
 
+> немного адаптированый flow **bitbucket**
+
 - **master** - main branch
 - **develop** - branch is created form **master**
 - **feature/** - branch is created from **develop**. When a _feature_ is complete it is merged into the **develop** branch. Branches should be named `feature/header`
